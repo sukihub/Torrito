@@ -4,22 +4,115 @@
 <head>
 
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 
 	<title>Torrito</title>
+
+    <script type="text/javascript">
+
+    function AutoComplete(elementId)
+    {
+        this.timer = null;
+        //this.element = null;
+
+        this.xmlHttp = new XMLHttpRequest();
+            /*/ajax request
+            try
+            {
+                this.xmlHttp = new XMLHttpRequest();
+	        }
+            catch (e)
+            {
+                try
+                {
+                    this.xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch(e)
+                {
+                    try
+                    {
+                        this.xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch(e)
+                    {
+                    	return;
+                    }
+                }
+            }*/
+
+        this.targetElement = document.getElementById(elementId);
+
+        this.keypressed = function()
+        {
+            //ak je interval nastaveny, nic neriesime
+            if (this.timer != null) return;
+
+            //this.element = element;
+            this.timer = setTimeout(this.loadAutoComplete, 1000);
+        };
+
+        this.process = function()
+        {
+        	if (this.xmlHttp.readyState == 4)
+        	{
+                this.targetElement.style.display = 'block';
+        		this.targetElement.innerHTML = this.xmlHttp.responseText;
+        	}
+        };
+
+        this.loadAutoComplete = function()
+        {
+            this.xmlHttp = new XMLHttpRequest();
+			this.xmlHttp.onreadystatechange = function()
+            {
+        	    if (this.xmlHttp.readyState == 4)
+        	    {
+                    this.targetElement.style.display = 'block';
+        		    this.targetElement.innerHTML = this.xmlHttp.responseText;
+
+                    clearTimeout(this.timer);
+        	    }
+            };
+
+            this.xmlHttp.open('GET', 'main/autoComplete?q=' + document.getElementById('q').value, true);
+            this.xmlHttp.send(null);
+        };
+    }
+
+    var ac = new AutoComplete('autoComplete');
+
+    </script>
 
 </head>
 <body class="container">
 
-<% if @results.empty? %>
-    <%= 'sorry' %>
-<% else %>
-    <ul>
-    <% @results.each do |torrent| %>
-        <li class="torrentRow"><%= torrent.title %></li>
-    <% end %>
-    </ul>
-<% end %>
+	<div class="header">
+
+		<div class="headerTitle"><img src="/images/title.png" alt="Torrito" /></div>
+		<div class="headerSearch" style="">
+            <form action="/search" method="get">
+			    <input name="q" id="q" onkeypress="ac.keypressed(this)" style="padding: 4px 5px 4px 5px; width: 457px; margin-right: 10px;" type="text" value="<%= h @query %>" />
+			    <input style="height: 26px;" type="submit" value="Search" />
+            </form>
+		</div>
+
+        <ul id="autoComplete"></ul>        
+
+	</div>
+
+	<div class="content">
+
+        <% if @results.empty? %>
+            <%= 'sorry' %>
+        <% else %>
+        <ul>
+        <% @results.each do |torrent| %>
+            <li class="torrentRow"><%= torrent.title %></li>
+        <% end %>
+        </ul>
+        <% end %>
+
+	</div>
 
 </body>
 </html>
