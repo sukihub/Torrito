@@ -41,3 +41,5 @@ Rails::Initializer.run do |config|
 
     config.active_record.schema_format = :sql
 end
+
+require 'will_paginate'

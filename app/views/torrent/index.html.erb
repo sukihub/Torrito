@@ -19,27 +19,23 @@
 		<div class="headerTitle"><img src="/images/title.png" alt="Torrito" /></div>
 		<div class="headerSearch" style="">
             <form action="/search" method="get">
-			    <input name="q" id="q" style="padding: 4px 5px 4px 5px; width: 457px; margin-right: 10px;" type="text" value="<%= h @query %>" />
+			    <input name="q" id="q" style="padding: 4px 5px 4px 5px; width: 457px; margin-right: 10px;" type="text" />
 			    <input style="height: 26px;" type="submit" value="Search" />
             </form>
 		</div>
 
-        <ul id="autoComplete"></ul>        
+        <ul id="autoComplete"></ul>
 
 	</div>
 
 	<div class="content">
 
-        <% if @results.empty? %>
-            <%= 'sorry' %>
-        <% else %>
-        <ul>
-            <% @results.each do |torrent| %>
-                <li class="torrentRow"><%= link_to torrent.title, "/t/#{torrent.id}" %></li>
-            <% end %>
-        </ul>
-        <%= will_paginate @results, :param_name => 'p' %>
-        <% end %>
+        <%= "<img src=\"/graph/draw/#{params[:id]}\" alt=\"graph\" />" %>
+
+        <%=h @torrent.title %><br/>
+        <%=h @torrent.tags %><br/>
+        <%=h @torrent.size %><br/>
+        <%=h @torrent.created_at %><br/>
 
 	</div>
 

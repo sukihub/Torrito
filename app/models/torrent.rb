@@ -2,6 +2,9 @@ class Torrent < ActiveRecord::Base
 
     has_many :details
 
+    cattr_reader :per_page
+    @@per_page = 50;
+
     def self.rssUpdateTorrents
 
         require 'open-uri';

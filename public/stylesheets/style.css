@@ -1,0 +1,56 @@
+body {
+	margin: 0px 20px 10px 20px;
+}
+.container {
+	width: 950px;
+}
+.header {
+	padding: 20px 40px 20px 40px;
+}
+.headerTitle {
+	float: left;
+	margin-right: 50px;
+	width: 270px;
+	height: 60px;
+}
+.headerSearch {
+	height: 30px;
+	margin-top: 30px;
+}
+
+#autoComplete {
+    display:none;
+	position:absolute;
+	top:80px;
+	left:380px;
+	width: 467px;
+
+	background-color:#FFFFFF;
+	border: 1px solid #DDDDDD;
+	border-top-width: 0px;
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	font-family: "Segoe UI", "Tahoma", sans-serif;
+	font-size: 10pt;
+}
+#autoComplete li {
+	padding: 1px 5px 1px 5px;
+}
+#autoComplete li.selected {
+	background-color: #E2FFD7;
+}
+
+
+.content {
+	margin-top: 20px;
+}
+.content h2 {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 15pt;
+}
+.showgrid {
+	background-image: url('/images/grid.png');
+}
