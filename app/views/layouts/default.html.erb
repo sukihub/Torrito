@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.autocomplete.css" />
+	<script type="text/javascript" src="/javascript/jquery.js" ></script>
+    <script type="text/javascript" src="/javascript/jquery.autocomplete.min.js" ></script>
+
+	<title>Torrito</title>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#q").autocomplete('/main/ac', {max: 8, minChars: 3, selectFirst: false, delay: 200});
+        });
+    </script>
+
+</head>
+<body class="container">
+
+	<div class="header">
+
+		<div class="headerTitle"><a href="/"><img src="/images/title.png" alt="Torrito" /></a></div>
+		<div class="headerSearch" style="">
+            <form action="/search" method="get">
+			    <input name="q" id="q" style="padding: 3px 4px 3px 4px; width: 470px; margin-right: 1px;" type="text" />
+			    <input style="height: 26px; width: 88px; padding-bottom: 2px;" type="submit" value="Search" />
+            </form>
+		</div>
+
+	</div>
+
+	<div class="content">
+		<%= yield %>
+	</div>
+
+	<div class="footer">
+		Torrito (c) 2010 | About | FAQ
+	</div>
+
+</body>
+</html>

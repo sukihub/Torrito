@@ -2,8 +2,8 @@ class GraphController < ApplicationController
 
     require 'RMagick'
 
-    LEFT = 75
-    RIGHT = 875
+    LEFT = 65
+    RIGHT = 880
     TOP = 15
     BOTTOM = 265
 
@@ -16,7 +16,7 @@ class GraphController < ApplicationController
         globalMin = [torrent.details.minimum(:seed), torrent.details.minimum(:leech)].min
 
         #vytvorim prazdny obrazok a sablonu grafu
-        o = Magick::Image.new(950, 300) do
+        o = Magick::Image.new(928, 300) do
             self.format = 'GIF'
             #self.background_color = '#EEEEEE'
         end
@@ -78,7 +78,7 @@ class GraphController < ApplicationController
         end
 
         #sirka stlpca
-        columnWidth = 800.0 / (pocet-1).to_f
+        columnWidth = 815.0 / (pocet-1).to_f
 
         #"vyska" dat grafu 
         dataHeightC = 250.0 / (globalMax - globalMin).to_f

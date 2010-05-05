@@ -1,52 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.autocomplete.css" />
-
-    <script type="text/javascript" src="/javascript/jquery.js" ></script>
-    <script type="text/javascript" src="/javascript/jquery.autocomplete.min.js" ></script>    
-
-	<title>Torrito</title>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#q").autocomplete('/main/ac', {max: 8, minChars: 3, selectFirst: false}); 
-        });
-    </script>
-
-</head>
-<body class="container">
-
-	<div class="header">
-
-		<div class="headerTitle"><img src="/images/title.png" alt="Torrito" /></div>
-		<div class="headerSearch" style="">
-            <form action="/search" method="get">
-			    <input name="q" id="q" style="padding: 4px 5px 4px 5px; width: 457px; margin-right: 0px;" type="text" value="<%=h @query %>" />
-			    <input style="height: 26px;" type="submit" value="Search" />
-            </form>
-		</div>
-
-    </div>
-
-	<div class="content">
-
-        <% if @results.empty? %>
-            <%= 'sorry' %>
-        <% else %>
-        <ul>
-            <% @results.each do |torrent| %>
-                <li class="torrentRow"><%= link_to torrent.title, "/t/#{torrent.id}" %></li>
-            <% end %>
-        </ul>
-        <%= will_paginate @results, :param_name => 'p' %>
+<% if @results.empty? %>
+    <%= 'sorry' %>
+<% else %>
+    <ul>
+        <% @results.each do |torrent| %>
+            <li class="torrentRow"><%= link_to torrent.title, "/t/#{torrent.id}" %></li>
         <% end %>
-
-	</div>
-
-</body>
-</html>
+    </ul>
+    <%= will_paginate @results, :param_name => 'p' %>
+<% end %>

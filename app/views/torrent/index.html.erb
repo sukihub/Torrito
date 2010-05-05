@@ -1,43 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<h2><%=h @torrent.title %></h2>
 
-<head>
+<div class="graph"><img src="/graph/<%= @torrent.id %>.gif" /></div>
 
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+<div class="details1">
+    <h3>Tags:</h3>
+    <p><%=h @torrent.tags %></p>
 
-	<title>Torrito</title>
+    <h3>Size:</h3>
+    <p><%= @torrent.size %> MB</p>
+</div>
 
-    <script type="text/javascript">
-    </script>
+<div class="details2">
+    <h5>Seeders / </h5>
+    <h4>Uploading:</h4><br/>
+    <h5>Leechers / </h5>
+    <h4>Downloading:</h4>
+</div>
 
-</head>
-<body class="container">
+<div class="details3">
+    <div class="seed"><%= @last.seed %></div>
+    <div class="leech"><%= @last.leech %></div>
+</div>
 
-	<div class="header">
-
-		<div class="headerTitle"><img src="/images/title.png" alt="Torrito" /></div>
-		<div class="headerSearch" style="">
-            <form action="/search" method="get">
-			    <input name="q" id="q" style="padding: 4px 8px 4px 5px; width: 457px; margin-right: 0px;" type="text" />
-			    <input style="height: 26px;" type="submit" value="Search" />
-            </form>
-		</div>
-
-        <ul id="autoComplete"></ul>
-
-	</div>
-
-	<div class="content">
-
-        <%= "<img src=\"/graph/#{params[:id]}.gif\" alt=\"graph\" />" %>
-
-        <%=h @torrent.title %><br/>
-        <%=h @torrent.tags %><br/>
-        <%=h @torrent.size %><br/>
-        <%=h @torrent.created_at %><br/>
-
-	</div>
-
-</body>
-</html>
+<div style="clear:both"></div>

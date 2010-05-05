@@ -1,6 +1,7 @@
 class MainController < ApplicationController
 
     caches_page :index
+    layout 'default', :except => :ac
 
     def index
     end
