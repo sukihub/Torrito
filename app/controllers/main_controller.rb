@@ -15,4 +15,13 @@ class MainController < ApplicationController
 
     end
 
+    def ac
+
+        query = "%#{params[:q]}%"
+        limit = params[:limit]
+
+        @results = Torrent.find_by_sql(['SELECT title FROM torrents WHERE title LIKE ? ORDER BY id DESC LIMIT ?', query, limit.to_i])
+
+    end
+
 end

@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
     map.connect 't/:id', :controller => 'torrent', :action => 'index'
+    map.connect 'graph/:id.gif', :controller => 'graph', :action => 'draw'
     map.connect 'search', :controller => 'main', :action => 'search'
 
   # Sample of regular route:

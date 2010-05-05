@@ -23,16 +23,16 @@ class GraphController < ApplicationController
 
         body = Magick::Draw.new
 
-        #body.font_family('Arial')
+        body.font_family('Segoe UI')
+        body.pointsize(14)
         body.text_align(Magick::RightAlign)
         body.fill_opacity(1)
         body.stroke_opacity(0)
         body.fill_color('#000000')
 
-        body.text(LEFT-15, TOP, globalMax.to_s)
-        body.text(LEFT-15, BOTTOM, globalMin.to_s)
+        body.text(LEFT-15, TOP+5, globalMax.to_s)
+        body.text(LEFT-15, BOTTOM+5, globalMin.to_s)
 
-        body.fill_opacity(0)
         body.stroke_width(1)
 
         body.stroke_color('#AAAAAA')
@@ -78,7 +78,7 @@ class GraphController < ApplicationController
         end
 
         #sirka stlpca
-        columnWidth = 900.0 / pocet.to_f
+        columnWidth = 800.0 / (pocet-1).to_f
 
         #"vyska" dat grafu 
         dataHeightC = 250.0 / (globalMax - globalMin).to_f
@@ -87,50 +87,49 @@ class GraphController < ApplicationController
         body.stroke_linecap('round')
         body.stroke_linejoin('round')
 
-        line = Array.new(pocet*2)
+        line1 = Array.new(pocet*2)
+        line2 = Array.new(pocet*2)
 
         body.stroke_color('#00FF00')
+        body.fill_color('#00FF00')
+        body.fill_opacity(0.3)
 
         for i in 0 .. pocet-1
-            line[i*2] = columnWidth*i + LEFT
-            line[i*2 + 1] = 250 - ((seedMax[i] - globalMin ) * dataHeightC) + TOP
+            line1[i*2] = columnWidth*i + LEFT
+            line1[i*2 + 1] = 250 - ((seedMax[i] - globalMin) * dataHeightC) + TOP
         end
-        body.polyline(*line)
 
         for i in 0 .. pocet-1
-            line[i*2] = columnWidth*i + LEFT
-            line[i*2 + 1] = 250 - ((seedMin[i] - globalMin ) * dataHeightC) + TOP
+            line2[i*2] = columnWidth*(pocet-1-i) + LEFT
+            line2[i*2 + 1] = 250 - ((seedMin[pocet-1-i] - globalMin) * dataHeightC) + TOP
         end
-        body.polyline(*line)
+
+        line1.push(*line2)
+        body.polygon(*line1)
+
+        line1 = Array.new(pocet*2)
+        line2 = Array.new(pocet*2)
 
         body.stroke_color('#0000FF')
+        body.fill_color('#0000FF')
+        body.fill_opacity(0.3)
 
         for i in 0 .. pocet-1
-            line[i*2] = columnWidth*i + LEFT
-            line[i*2 + 1] = 250 - ((leechMax[i] - globalMin ) * dataHeightC) + TOP
+            line1[i*2] = columnWidth*i + LEFT
+            line1[i*2 + 1] = 250 - ((leechMax[i] - globalMin) * dataHeightC) + TOP
         end
-        body.polyline(*line)
 
         for i in 0 .. pocet-1
-            line[i*2] = columnWidth*i + LEFT
-            line[i*2 + 1] = 250 - ((leechMin[i] - globalMin ) * dataHeightC) + TOP
+            line2[i*2] = columnWidth*(pocet-1-i) + LEFT
+            line2[i*2 + 1] = 250 - ((leechMin[pocet-1-i] - globalMin) * dataHeightC) + TOP
         end
-        body.polyline(*line)
 
-        #body.stroke_linecap('round')
-        #body.stroke_linejoin('round')
-
-        #pole = [20,40, 40,100, 60,80, 80,120]
-        #body.polyline(*pole)
-
-        #body.stroke_color('#0000FF')
-
-        #pole = [120,40, 140,100, 160,80, 180,120]
-        #body.polyline(*pole)
+        line1.push(*line2)
+        body.polygon(*line1)
 
         body.draw(o)
 
-        send_data(o.to_blob, :filename => 'graph.gif', :type => 'image/gif', :disposition => 'inline')
+        send_data(o.to_blob, :filename => "#{params[:id]}.gif", :type => 'image/gif', :disposition => 'inline')
 
     end
 
