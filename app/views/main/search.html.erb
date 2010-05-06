@@ -1,9 +1,10 @@
+<h2>Search results for: <span style="color: #000000; font-weight: normal;"><%=h @query %></span></h2>
 <% if @results.empty? %>
-    <%= 'sorry' %>
+    <%= 'Sorry bro, no results found.' %>
 <% else %>
-    <ul>
+    <ul class="searchResults">
         <% @results.each do |torrent| %>
-            <li class="torrentRow"><%= link_to torrent.title, "/t/#{torrent.id}" %></li>
+            <li><%= link_to torrent.title, "/t/#{torrent.id}" %><span class="tags"><%=h torrent.tags %></span></li>
         <% end %>
     </ul>
     <%= will_paginate @results, :param_name => 'p' %>

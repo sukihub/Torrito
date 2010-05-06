@@ -44,6 +44,13 @@ class GraphController < ApplicationController
         body.line(LEFT-5, TOP, LEFT-10, TOP)
         body.line(LEFT-5, BOTTOM, LEFT-10, BOTTOM)
 
+        body.stroke_color('#EEEEEE')
+
+        for i in 0 .. 9
+            tmp = i*25 + TOP
+            body.line(LEFT,tmp, RIGHT,tmp)
+        end
+
         #body.stroke_color('#DDDDDD')
 
         #body.line(LEFT,TOP, LEFT,BOTTOM)
