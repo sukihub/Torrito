@@ -23,26 +23,15 @@ class GraphController < ApplicationController
 
         body = Magick::Draw.new
 
-        body.font_family('Segoe UI')
-        body.pointsize(14)
-        body.text_align(Magick::RightAlign)
-        body.fill_opacity(1)
-        body.stroke_opacity(0)
-        body.fill_color('#000000')
-
-        body.text(LEFT-15, TOP+5, globalMax.to_s)
-        body.text(LEFT-15, BOTTOM+5, globalMin.to_s)
-
         body.stroke_width(1)
-
         body.stroke_color('#AAAAAA')
         body.stroke_linecap('square')
 
         body.line(LEFT-5,TOP-5, LEFT-5,BOTTOM+5)
         body.line(LEFT-5,BOTTOM+5, RIGHT+5,BOTTOM+5)
 
-        body.line(LEFT-5, TOP, LEFT-10, TOP)
-        body.line(LEFT-5, BOTTOM, LEFT-10, BOTTOM)
+        #body.line(LEFT-5, TOP, LEFT-10, TOP)
+        #body.line(LEFT-5, BOTTOM, LEFT-10, BOTTOM)
 
         body.stroke_color('#EEEEEE')
 
@@ -87,10 +76,41 @@ class GraphController < ApplicationController
         #sirka stlpca
         columnWidth = 815.0 / (pocet-1).to_f
 
-        #"vyska" dat grafu 
-        dataHeightC = 250.0 / (globalMax - globalMin).to_f
+        #"vyska" dat grafu
+        dataHeightC = 250.0 / (globalMax - globalMin)
 
-        #ideme kreslit seedov
+        #vypisanie textu
+        body.font_family('Segoe UI')
+        body.pointsize(14)
+        body.text_align(Magick::RightAlign)
+        body.fill_opacity(1)
+        body.stroke_opacity(0)
+        body.fill_color('#000000')
+
+        #body.text(LEFT-15, TOP+5, globalMax.to_s)
+        #body.text(LEFT-15, BOTTOM+5, globalMin.to_s)
+
+        for i in 0 .. 5
+            actual = i*50
+            real = (250-actual)/dataHeightC + globalMin
+
+            body.text(LEFT-15, TOP+actual+5, real.round.to_s)
+        end
+
+        #label-y datumov po
+        dateColumn = (90 / columnWidth).ceil
+
+        body.text_align(Magick::CenterAlign)
+
+        tmp = columnWidth*dateColumn
+        dateID = dateColumn
+        while tmp < 725
+            body.text(LEFT + tmp, BOTTOM + 25, details[pocetZlucovanych*dateID].created_at.strftime('%d.%m.%Y'))
+            tmp = tmp + columnWidth*dateColumn
+            dateID = dateID + dateColumn
+        end
+
+        #ideme kreslit ciary grafu - seedov
         body.stroke_linecap('round')
         body.stroke_linejoin('round')
 
@@ -100,6 +120,7 @@ class GraphController < ApplicationController
         body.stroke_color('#00FF00')
         body.fill_color('#00FF00')
         body.fill_opacity(0.3)
+        body.stroke_opacity(1)
 
         for i in 0 .. pocet-1
             line1[i*2] = columnWidth*i + LEFT
@@ -114,6 +135,7 @@ class GraphController < ApplicationController
         line1.push(*line2)
         body.polygon(*line1)
 
+        #leechov
         line1 = Array.new(pocet*2)
         line2 = Array.new(pocet*2)
 

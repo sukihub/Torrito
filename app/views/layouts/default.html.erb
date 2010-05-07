@@ -1,3 +1,8 @@
+<%
+   @title = 'Torrito' if not defined? @title
+   @query = '' if not defined? @query
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -5,16 +10,18 @@
 
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/datepicker.css" />
 
     <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.autocomplete.css" />
 	<script type="text/javascript" src="/javascript/jquery.js" ></script>
     <script type="text/javascript" src="/javascript/jquery.autocomplete.min.js" ></script>
 
-	<title>Torrito</title>
+	<title><%=h @title %></title>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#q").autocomplete('/main/ac', {max: 8, minChars: 3, selectFirst: false, delay: 200});
+            $('#q').autocomplete('/main/ac', {max: 8, minChars: 3, selectFirst: false, delay: 200});
+            $('#q').focus();
         });
     </script>
 
@@ -26,7 +33,7 @@
 		<div class="headerTitle"><a href="/"><img src="/images/title.png" alt="Torrito" /></a></div>
 		<div class="headerSearch" style="">
             <form action="/search" method="get">
-			    <input name="q" id="q" style="padding: 3px 4px 3px 4px; width: 470px; margin-right: 1px;" type="text" />
+			    <input name="q" id="q" style="padding: 3px 4px 3px 4px; width: 470px; margin-right: 1px;" type="text" value="<%=h @query %>" />
 			    <input style="height: 26px; width: 88px; padding-bottom: 2px;" type="submit" value="Search" />
             </form>
 		</div>

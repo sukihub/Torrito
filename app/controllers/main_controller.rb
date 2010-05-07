@@ -2,6 +2,7 @@ class MainController < ApplicationController
 
     caches_page :index
     layout 'default', :except => :ac
+    @query = ''
 
     def index
     end
@@ -9,6 +10,7 @@ class MainController < ApplicationController
     def search
 
         @query = params[:q];
+        @title = "#{@query} - Torrito search"
 
         @results = Torrent.paginate_by_sql(['SELECT * FROM torrents WHERE MATCH(title, tags) AGAINST(?)', @query], :page => params[:p]);
         #@results = Torrent.find_by_sql();
@@ -18,10 +20,10 @@ class MainController < ApplicationController
 
     def ac
 
-        query = "%#{params[:q]}%"
+        @query = "%#{params[:q]}%"
         limit = params[:limit]
 
-        @results = Torrent.find_by_sql(['SELECT title FROM torrents WHERE title LIKE ? ORDER BY id DESC LIMIT ?', query, limit.to_i])
+        @results = Torrent.find_by_sql(['SELECT title FROM torrents WHERE title LIKE ? ORDER BY id DESC LIMIT ?', @query, limit.to_i])
 
     end
 

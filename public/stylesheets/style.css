@@ -34,6 +34,7 @@ a img {
 	font-size: 18pt;
 }
 .searchResults {
+    position: relative;
     list-style-type: none;
     padding: 0px;
     margin: 0px;
@@ -42,7 +43,7 @@ a img {
     padding: 3px 8px 3px 8px;
     border-bottom: 1px solid #EEEEFF;
     display: table;
-    width: 100%;
+    width: 912px;
 }
 .searchResults li:hover {
     background-color: #EEEEFF;
@@ -140,5 +141,16 @@ a img {
 .graph {
 	width: 928px;
 	height: 300px;
-	margin-bottom: 16px;
+	margin-bottom: 24px;
+}
+.dateSelector {
+    text-align: right;
+    padding-right: 32px;
+}
+.dateSelector input {
+    width: 80px;
+    margin-right: 8px;
+}
+.dateSelector img {
+    cursor: pointer;
 }

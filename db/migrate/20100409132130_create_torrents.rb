@@ -2,7 +2,7 @@ class CreateTorrents < ActiveRecord::Migration
     def self.up
         create_table :torrents, :options => 'engine = "MyISAM"' do |t|
             t.string :title, :limit => 100, :null => false
-            t.string :tags, :limit => 50, :null => false
+            t.string :tags, :limit => 80, :null => false
             t.integer :size, :null => false
 
             t.timestamps

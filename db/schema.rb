@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(:version => 20100409133051) do
   add_index "details", ["torrent_id"], :name => "index_details_on_torrent_id"
 
   create_table "torrents", :force => true do |t|
-    t.string   "title",      :limit => 50, :null => false
-    t.string   "tags",       :limit => 50, :null => false
-    t.integer  "size",                     :null => false
+    t.string   "title",      :limit => 100, :null => false
+    t.string   "tags",       :limit => 80,  :null => false
+    t.integer  "size",                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.binary   "tHash",      :limit => 20, :null => false
+    t.binary   "tHash",      :limit => 20,  :null => false
   end
 
   add_index "torrents", ["tHash", "id"], :name => "index_torrents_on_tHash_and_id", :unique => true

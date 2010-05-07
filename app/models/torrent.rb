@@ -24,7 +24,7 @@ class Torrent < ActiveRecord::Base
         peerRegexp = Regexp.new('Peers: ([0-9]+)');
         hashRegexp = Regexp.new('Hash: (.{40})');
 
-        for i in 61 .. lastPage
+        for i in 0 .. lastPage
 
             puts "processing #{i.to_s}";
 
