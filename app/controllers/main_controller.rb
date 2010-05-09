@@ -2,7 +2,7 @@ class MainController < ApplicationController
 
     caches_page :index
     layout 'default', :except => :ac
-    @query = ''
+    @focus = true
 
     def index
     end

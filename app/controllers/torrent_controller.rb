@@ -1,7 +1,6 @@
 class TorrentController < ApplicationController
 
     layout 'default'
-    @query = ''
 
     def index
 
