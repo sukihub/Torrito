@@ -24,3 +24,13 @@ set :use_sudo, false
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+
+#whenever
+after "deploy:symlink", "deploy:update_crontab"
+
+namespace :deploy do
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd ~/torrito/current && whenever --write-crontab #{application}"
+  end
+end
