@@ -1,7 +1,10 @@
 set :application, 'torrito'
-set :repository,  'git://github.com/suki-git/Torrito.git'
 
 set :scm, :git
+set :repository,  'git://github.com/suki-git/Torrito.git'
+set :branch, 'master'
+set :deploy_via, :remote_cache
+
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :deploy_to, "~/#{application}"
@@ -32,5 +35,10 @@ namespace :deploy do
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
     run "cd ~/torrito/current && whenever --write-crontab #{application}"
+  end
+
+  desc "Restart application"
+  task :restart do
+      run "touch #{current_path}/tmp/restart.txt"
   end
 end
