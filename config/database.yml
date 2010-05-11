@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: torrito_production
   pool: 5
-  username: root
-  password: 
-  host: localhost
+  username: VoS
+  password: VoSatRelaX 
+  host: relax.fiit.stuba.sk
