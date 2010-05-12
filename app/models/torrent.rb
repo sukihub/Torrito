@@ -28,7 +28,22 @@ class Torrent < ActiveRecord::Base
 
             puts "processing #{i.to_s}";
 
-            page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
+            time = 60
+
+            begin
+                page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
+            rescue
+                puts "  - failed, sleeping #{time} seconds, then retry"
+                sleep(time)
+                time = time*2
+
+                if time < 2000
+                    retry
+                else
+                    puts " - sleeping time greater then 2000s, moving to next page"
+                    next
+                end
+            end
             #vymazem ciarky, ktore by mi neskor pri cislach len zavadzali
             page.delete!(',');
 
@@ -55,6 +70,8 @@ class Torrent < ActiveRecord::Base
                 Detail.create(:torrent_id => result.id, :seed => seeds[j][0], :leech => peers[j][0]);
 
             end
+
+            sleep(2)
         end
 
     end
