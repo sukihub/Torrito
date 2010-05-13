@@ -9,7 +9,16 @@ class Torrent < ActiveRecord::Base
 
         require 'open-uri';
 
-        page = open("http://torrentz.com/verified").read();
+        begin
+            #timeout(5) do
+                page = open("http://torrentz.com/verified").read();
+            #end
+            #puts '  - page numbers loaded'
+        rescue #Timeout::Error
+            puts '  - sleeping 60, retry'
+            sleep(60)
+            retry
+        end
 
         #pocet stran
         pageNumbers = page.scan(/verified\?q=&amp;p=(\d+)/);
@@ -31,22 +40,25 @@ class Torrent < ActiveRecord::Base
             time = 60
 
             begin
-                page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
-            rescue
+                #timeout(5) do
+                    page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
+                #end
+                #puts "  - ok"
+            rescue #Timeout::Error
                 puts "  - failed, sleeping #{time} seconds, then retry"
                 sleep(time)
-                time = time*2
+                #time = time*2
 
-                if time < 2000
+                #if time < 2000
                     retry
-                else
-                    puts " - sleeping time greater then 2000s, moving to next page"
-                    next
-                end
+                #else
+                    #puts " - sleeping time greater then 2000s, moving to next page"
+                    #next
+                #end
             end
+
             #vymazem ciarky, ktore by mi neskor pri cislach len zavadzali
             page.delete!(',');
-
             titles = page.scan(titleRegexp);
             #prve title je napis torrentz
             titles.shift();
@@ -71,7 +83,7 @@ class Torrent < ActiveRecord::Base
 
             end
 
-            sleep(2)
+            #sleep(2)
         end
 
     end

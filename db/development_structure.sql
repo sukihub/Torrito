@@ -7,7 +7,7 @@ CREATE TABLE `details` (
   PRIMARY KEY (`id`),
   KEY `index_details_on_torrent_id` (`torrent_id`),
   KEY `index_details_on_created_at` (`created_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=507212 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `torrents` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_torrents_on_tHash_and_id` (`tHash`,`id`),
   FULLTEXT KEY `index_torrents_on_title_and_tags` (`title`,`tags`)
-) ENGINE=MyISAM AUTO_INCREMENT=55704 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO schema_migrations (version) VALUES ('20100409132130');
 

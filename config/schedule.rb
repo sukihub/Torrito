@@ -19,10 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, :at => '4:00am' do
-    runner 'Torrent.rssUpdateTorrents'
+every 1.day, :at => '5:00am' do
+    rake 'torrent:update'
 end
 
-every 1.day, :at => '4:00pm' do
-    runner 'Torrent.rssUpdateTorrents'
+every 1.day, :at => '23:00pm' do
+    rake 'torrent:update'
 end
