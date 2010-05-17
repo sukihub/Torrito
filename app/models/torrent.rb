@@ -2,6 +2,7 @@ class Torrent < ActiveRecord::Base
 
     has_many :details
 
+    #will_paginate
     cattr_reader :per_page
     @@per_page = 50;
 

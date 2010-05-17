@@ -11,7 +11,7 @@ class CreateTorrents < ActiveRecord::Migration
         execute "ALTER TABLE " + :torrents.to_s + " ADD tHash binary(20) NOT NULL"
 
         add_index :torrents, [:tHash, :id], { :unique => true }
-        add_index :torrents, [:title, :tags]
+        #add_index :torrents, [:title, :tags]
     end
 
     def self.down

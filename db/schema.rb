@@ -31,6 +31,6 @@ ActiveRecord::Schema.define(:version => 20100409133051) do
   end
 
   add_index "torrents", ["tHash", "id"], :name => "index_torrents_on_tHash_and_id", :unique => true
-  add_index "torrents", ["title", "tags"], :name => "index_torrents_on_title_and_tags"
+  #add_index "torrents", ["title", "tags"], :name => "index_torrents_on_title_and_tags"
 
 end
