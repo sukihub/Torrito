@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20100409133051) do
     t.integer  "size",                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.binary   "tHash",      :limit => 20,  :null => false
+    t.binary   "tHash",      :null => false
   end
 
   add_index "torrents", ["tHash", "id"], :name => "index_torrents_on_tHash_and_id", :unique => true
