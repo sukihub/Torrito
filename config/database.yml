@@ -38,11 +38,11 @@ test:
   host: localhost
 
 production:
-  adapter: postgresql
+  adapter: mysql
   encoding: utf8
   reconnect: false
   database: torrito_production
   pool: 5
-  username: torrito
-  password:  
+  username: vos
+  password: VoSatRelaX 
   host: localhost
