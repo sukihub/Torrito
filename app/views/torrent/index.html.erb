@@ -1,7 +1,7 @@
 <h2><%=h @torrent.title %></h2>
 
 <div class="graph">
-    <img src="/graph/<%= @torrent.id %>.gif" id="graphImg"/>
+    <img src="<%= url_for :controller => 'graph' %>/<%= @torrent.id %>.gif" id="graphImg"/>
 </div>
 
 <div class="details1">

@@ -9,17 +9,14 @@
 <head>
 
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery.autocomplete.css" />
-	<script type="text/javascript" src="/javascript/jquery.js" ></script>
-    <script type="text/javascript" src="/javascript/jquery.autocomplete.min.js" ></script>
+	<%= stylesheet_link_tag :all, :cache => true %>
+    <%= javascript_include_tag :all, :cache => true %>
 
 	<title><%=h @title %></title>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#q').autocomplete('/main/ac', {max: 8, minChars: 3, selectFirst: false, delay: 200});
+            $('#q').autocomplete('<%= url_for :controller => 'main', :action => 'ac' %>', {max: 8, minChars: 3, selectFirst: false, delay: 200});
             <%= '$(\'#q\').focus();' if @focus %>
         });
     </script>
@@ -29,9 +26,9 @@
 
 	<div class="header">
 
-		<div class="headerTitle"><a href="/"><img src="/images/title.png" alt="Torrito" /></a></div>
+		<div class="headerTitle"><%= link_to(image_tag('title.png'), root_path) %></div>
 		<div class="headerSearch" style="">
-            <form action="/search" method="get">
+            <form action="<%= url_for :controller => 'search' %>" method="get">
 			    <input name="q" id="q" style="padding: 3px 4px 3px 4px; width: 470px; margin-right: 1px;" type="text" value="<%=h @query %>" />
 			    <input style="height: 26px; width: 88px; padding-bottom: 2px;" type="submit" value="Search" />
             </form>
