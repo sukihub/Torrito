@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="0d191732-2f6c-4ebc-93ca-f87b17241a3b" name="Default" comment="">
+    <list default="true" readonly="true" id="0d191732-2f6c-4ebc-93ca-f87b17241a3b" name="Default" comment="- statistika, odchylky a priemer&#10;- opraveny update skript">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/deploy.rb" afterPath="$PROJECT_DIR$/config/deploy.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/schedule.rb" afterPath="$PROJECT_DIR$/config/schedule.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20100602133754_add_statistics.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20100602150534_add_details_count.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/torrent.rb" afterPath="$PROJECT_DIR$/app/models/torrent.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/update.rake" afterPath="$PROJECT_DIR$/lib/tasks/update.rake" />
     </list>
     <ignored path="torrito.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +30,7 @@
       <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="87" selection-start="339" selection-end="339" vertical-scroll-proportion="-0.6818182">
+            <state line="6" column="87" selection-start="339" selection-end="339" vertical-scroll-proportion="-4.090909">
               <folding />
             </state>
           </provider>
@@ -46,7 +39,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/torrent/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+            <state line="3" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="-2.0454545">
               <folding />
             </state>
           </provider>
@@ -64,7 +57,7 @@
       <file leaf-file-name="torrent.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/torrent.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="63" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.0">
+            <state line="58" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,7 +66,7 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="3" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.6834416">
+            <state line="31" column="1" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.54298645">
               <folding />
             </state>
           </provider>
@@ -715,19 +708,19 @@
     <frame x="-8" y="-8" width="1296" height="786" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16136725" sideWeight="0.7359636" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25341427" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="19" y="357" width="1258" height="164" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25341427" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="19" y="357" width="1258" height="164" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -744,7 +737,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="deploy c. 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="- statistika, odchylky a priemer&#10;- opraveny update skript" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -775,6 +768,7 @@
     <MESSAGE value="heroku pokus c. 1" />
     <MESSAGE value="heroku pokus c. 2" />
     <MESSAGE value="deploy c. 2" />
+    <MESSAGE value="- statistika, odchylky a priemer&#10;- opraveny update skript" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -810,20 +804,6 @@
         <state line="14" column="41" selection-start="459" selection-end="459" vertical-scroll-proportion="0.3409091" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="87" selection-start="339" selection-end="339" vertical-scroll-proportion="-0.6818182">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/torrent/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/graph_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -854,16 +834,30 @@
         <state line="2" column="0" selection-start="84" selection-end="137" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/torrent/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="52" selection-start="105" selection-end="105" vertical-scroll-proportion="-2.0454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="87" selection-start="339" selection-end="339" vertical-scroll-proportion="-4.090909">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/torrent.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="63" selection-start="1453" selection-end="1453" vertical-scroll-proportion="0.0">
+        <state line="58" column="44" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="3" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.6834416">
+        <state line="31" column="1" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.54298645">
           <folding />
         </state>
       </provider>
