@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100409133051) do
+ActiveRecord::Schema.define(:version => 20100602150534) do
 
   create_table "details", :force => true do |t|
     t.integer  "torrent_id", :null => false
@@ -22,15 +22,20 @@ ActiveRecord::Schema.define(:version => 20100409133051) do
   add_index "details", ["torrent_id"], :name => "index_details_on_torrent_id"
 
   create_table "torrents", :force => true do |t|
-    t.string   "title",      :limit => 100, :null => false
-    t.string   "tags",       :limit => 80,  :null => false
-    t.integer  "size",                      :null => false
+    t.string   "title",         :limit => 100,                :null => false
+    t.string   "tags",          :limit => 80,                 :null => false
+    t.integer  "size",                                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.binary   "tHash",      :null => false
+    t.binary   "tHash",         :limit => 20,                 :null => false
+    t.float    "average_s"
+    t.float    "deviation_s"
+    t.float    "average_l"
+    t.float    "deviation_l"
+    t.integer  "details_count",                :default => 0
   end
 
   add_index "torrents", ["tHash", "id"], :name => "index_torrents_on_tHash_and_id", :unique => true
-  #add_index "torrents", ["title", "tags"], :name => "index_torrents_on_title_and_tags"
+  add_index "torrents", ["title", "tags"], :name => "index_torrents_on_title_and_tags"
 
 end

@@ -20,9 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '5:00am' do
-    rake 'torrent:update'
+    rake 'torrent:update --trace'
 end
 
 every 1.day, :at => '23:00pm' do
-    rake 'torrent:update'
+    rake 'torrent:update --trace'
 end

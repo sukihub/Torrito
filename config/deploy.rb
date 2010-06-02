@@ -32,10 +32,10 @@ set :use_sudo, false
 after "deploy:symlink", "deploy:update_crontab"
 
 namespace :deploy do
-  desc "Update the crontab file"
-  task :update_crontab, :roles => :db do
-    run "cd ~/torrito/current && whenever --write-crontab #{application}"
-  end
+  #desc "Update the crontab file"
+  #task :update_crontab, :roles => :db do
+  #  run "cd ~/torrito/current && whenever --write-crontab #{application}"
+  #end
 
   desc "Restart application"
   task :restart do
