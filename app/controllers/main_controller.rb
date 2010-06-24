@@ -2,12 +2,21 @@ class MainController < ApplicationController
 
     caches_page :index
     layout 'default', :except => :ac
-    @focus = true
 
     def index
+
+      @focus = true
+
+      time = 1.weeks.ago.to_formatted_s(:db)
+      details_count = 7;
+
+      @results = Torrent.find(:all, :conditions => ['created_at < ? AND details_count >= ?', time, details_count], :order => 'rank_agg DESC', :limit => 20)
+
     end
 
     def search
+
+        @focus = true
 
         @query = params[:q];
         @title = "#{@query} - Torrito search"

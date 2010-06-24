@@ -56,5 +56,26 @@ namespace :torrent do
         end
     end
 
+    task :rank_init => :environment do
+
+      Torrent.find(:all).each do |t|
+        Torrent.update_rank_leech(t)
+        Torrent.update_rank_seed(t)
+
+        t.save!
+      end
+
+    end
+
+    task :rank => :environment do
+
+      Torrent.find(:all).each do |t|
+        Torrent.update_rank(t)
+        
+        t.save!
+      end
+
+    end
+
 end
 

@@ -11,11 +11,11 @@ class Torrent < ActiveRecord::Base
         require 'open-uri';
 
         begin
-            timeout(5) do
+            timeout(30) do
                 @page = open("http://torrentz.com/verified").read()
             end
-            #puts '  - page numbers loaded'
-        rescue Timeout::Error
+            puts '  - page numbers loaded'
+        rescue
             puts '  - sleeping 120, retry'
             sleep(120)
             retry
@@ -25,7 +25,7 @@ class Torrent < ActiveRecord::Base
         pageNumbers = @page.scan(/verified\?q=&amp;p=(\d+)/);
         pageNumbers.pop();
 
-        lastPage = pageNumbers.last().to_s().to_i();
+        lastPage = pageNumbers.last[0].to_i();
 
         titleRegexp = Regexp.new('<title>(.*)</title>');
         tagRegexp = Regexp.new('<category>(.*)</category>');
@@ -39,25 +39,20 @@ class Torrent < ActiveRecord::Base
             puts "processing #{i.to_s}";
 
             begin
-                timeout(5) do
+                timeout(30) do
                     @page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
                 end
-                #puts "  - ok"
-            rescue Timeout::Error
+                puts "  - ok"
+            rescue 
                 puts "  - failed, sleeping 120 seconds, then retry"
                 sleep(120)
-                #time = time*2
-
-                #if time < 2000
-                    retry
-                #else
-                    #puts " - sleeping time greater then 2000s, moving to next page"
-                    #next
-                #end
+                retry
             end
 
             #vymazem ciarky, ktore by mi neskor pri cislach len zavadzali
             @page.delete!(',');
+            #nejake utf8 znaky, ktore mysql nema rado
+            @page.sub!(/[\x90-\x99]/, '');
             titles = @page.scan(titleRegexp);
             #prve title je napis torrentz
             titles.shift();
@@ -96,12 +91,47 @@ class Torrent < ActiveRecord::Base
                     new_s = (t.details_count - 2)*(t.deviation_s**2) + delta_s*(seed - t.average_s)
                     t.deviation_s = Math.sqrt(new_s / (t.details_count - 1) )
 
+                    #upravime rank-y
+                    Torrent.update_rank_leech(t)
+                    Torrent.update_rank_seed(t)
+                    Torrent.update_rank(t)
+
                     t.save!
                 end
 
                 Detail.create(:torrent_id => t.id, :seed => seeds[j][0], :leech => peers[j][0]);
 
             end
+        end
+
+    end
+
+    def self.update_rank_leech(t)
+
+        if t.deviation_l == 0
+          t.rank_l = 0
+        else
+          t.rank_l = t.average_l / t.deviation_l
+        end
+
+    end
+
+    def self.update_rank_seed(t)
+
+        if t.deviation_s == 0
+          t.rank_s = 0
+        else
+          t.rank_s = t.average_s / t.deviation_s
+        end
+
+    end
+
+    def self.update_rank(t)
+
+        if t.details_count < 7
+          t.rank_agg = 0
+        else
+          t.rank_agg = (t.rank_s + t.rank_l*0.5) / 2
         end
 
     end

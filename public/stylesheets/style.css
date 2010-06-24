@@ -59,6 +59,9 @@ a img {
 .searchResults .tags {
     font-size: 10pt;
     color: #AAAAAA;
+    margin-right: 10px;
+}
+.searchResults .right {
     display: table-cell;
     text-align: right;
 }

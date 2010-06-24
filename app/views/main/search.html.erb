@@ -4,7 +4,13 @@
 <% else %>
     <ul class="searchResults">
         <% @results.each do |torrent| %>
-            <li><%= link_to torrent.title, "#{url_for :controller => 't'}/#{torrent.id}" %><span class="tags"><%=h torrent.tags %></span></li>
+            <li>
+              <%= link_to torrent.title, "#{url_for :controller => 't'}/#{torrent.id}" %>
+              <span class="right">
+                <span class="tags"><%=h torrent.tags %></span>
+                <%=h '%.1f' % torrent.rank_agg %>
+              </span>
+            </li>
         <% end %>
     </ul>
     <%= will_paginate @results, :param_name => 'p' %>
