@@ -1,5 +1,7 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
+RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+
 ActionController::Base.relative_url_root = '/torrito'
 
 # The production environment is meant for finished, "live" apps.

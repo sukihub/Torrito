@@ -11,9 +11,9 @@ class Torrent < ActiveRecord::Base
         require 'open-uri';
 
         begin
-            timeout(30) do
+            #timeout(30) do
                 @page = open("http://torrentz.com/verified").read()
-            end
+            #end
             puts '  - page numbers loaded'
         rescue
             puts '  - sleeping 120, retry'
@@ -39,9 +39,9 @@ class Torrent < ActiveRecord::Base
             puts "processing #{i.to_s}";
 
             begin
-                timeout(30) do
+                #timeout(30) do
                     @page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
-                end
+                #end
                 puts "  - ok"
             rescue 
                 puts "  - failed, sleeping 120 seconds, then retry"
@@ -70,7 +70,7 @@ class Torrent < ActiveRecord::Base
                 hash = hashes[j].pack('H*');
                 t = Torrent.find_by_tHash(hash);
                 if t.nil?
-                    t = Torrent.create(:tHash => hash, :title => titles[j][0], :tags => tags[j][0], :size => sizes[j][0], :average_l => peers[j][0], :average_s => seeds[j][0], :deviation_s => 0.0, :deviation_l => 0.0);
+                    t = Torrent.create(:tHash => hash, :title => titles[j][0], :tags => tags[j][0], :size => sizes[j][0], :average_l => peers[j][0], :average_s => seeds[j][0], :deviation_s => 0.0, :deviation_l => 0.0, :details_count => 1);
                 else
                     t.details_count = t.details_count + 1
 

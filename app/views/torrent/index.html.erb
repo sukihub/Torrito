@@ -1,4 +1,6 @@
-<h2><%=h @torrent.title %></h2>
+<h2>
+  <%=h @torrent.title %>
+</h2>
 
 <div class="graph">
     <img src="<%= url_for :controller => 'graph' %>/<%= @torrent.id %>.gif" id="graphImg"/>
@@ -19,6 +21,7 @@
 </div>
 
 <div class="details2">
+    <h4>Rank:</h4><br/>
     <h5>Seeders / </h5>
     <h4>Uploading:</h4><br/>
     <h5>Leechers / </h5>
@@ -26,6 +29,7 @@
 </div>
 
 <div class="details3">
+    <div class="rank"><%=h '%.1f' % @torrent.rank_agg %></div>
     <div class="seed"><%= @last.seed %></div>
     <div class="leech"><%= @last.leech %></div>
 </div>

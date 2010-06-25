@@ -119,6 +119,9 @@ a img {
 .details3 .leech {
 	color: #0000FF;
 }
+.details3 .rank {
+    color: #AAAAAA;
+}
 .footer {
 	background-color:#DDDDFF;
 	padding: 16px 32px 10px 32px;
