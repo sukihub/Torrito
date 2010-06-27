@@ -6,6 +6,11 @@ class Torrent < ActiveRecord::Base
     cattr_reader :per_page
     @@per_page = 50;
 
+    define_index do
+        indexes title, tags
+        has size, created_at, rank_agg
+    end
+
     def self.rssUpdateTorrents
 
         require 'open-uri';
@@ -15,9 +20,13 @@ class Torrent < ActiveRecord::Base
                 @page = open("http://torrentz.com/verified").read()
             #end
             puts '  - page numbers loaded'
+        rescue Timeout::Error
+            puts '  - sleeping 60, retry'
+            sleep(60)
+            retry
         rescue
-            puts '  - sleeping 120, retry'
-            sleep(120)
+            puts '  - other error, sleep 5 minutes, then retry'
+            sleep(5*60)
             retry
         end
 
@@ -42,10 +51,14 @@ class Torrent < ActiveRecord::Base
                 #timeout(30) do
                     @page = open("http://torrentz.com/feed_verified?p=#{i.to_s}").read();
                 #end
-                puts "  - ok"
-            rescue 
-                puts "  - failed, sleeping 120 seconds, then retry"
-                sleep(120)
+                #puts "  - ok"
+            rescue Timeout::Error
+                puts "  - failed, sleeping 60 seconds, then retry"
+                sleep(60)
+                retry
+            rescue
+                puts '  - other error, sleep 5 minutes, then retry'
+                sleep(5*60)
                 retry
             end
 

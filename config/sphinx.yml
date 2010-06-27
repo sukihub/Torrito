@@ -1,0 +1,4 @@
+development:
+  bin_path: C:\Programy\Ruby\bin\
+  searchd_binary_name: searchd.exe
+  indexer_binary_name: indexer.exe

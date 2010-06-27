@@ -2,6 +2,7 @@ namespace :torrent do
 
     task :update => :environment do
         Torrent.rssUpdateTorrents
+        expire_page :controller => 'main', :action => 'index'
     end
 
     task :calc => :environment do

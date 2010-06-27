@@ -22,9 +22,11 @@ class MainController < ApplicationController
         @title = "#{@query} - Torrito search"
 
         #@results = Torrent.paginate(:page => params[:p], :conditions => ['title LIKE ?', "%#{@query}%"], :order => 'id DESC')
-        @results = Torrent.paginate_by_sql(['SELECT * FROM torrents WHERE MATCH(title, tags) AGAINST(?)', @query], :page => params[:p]);
+        #@results = Torrent.paginate_by_sql(['SELECT * FROM torrents WHERE MATCH(title, tags) AGAINST(?)', @query], :page => params[:p]);
         #@results = Torrent.find_by_sql();
         #@results = Torrent.find_by_sql("SELECT * FROM torrents WHERE MATCH(title, tags) AGAINST('#{query}')");
+
+        @results = Torrent.search @query, :page => params[:p], :per_page => 50, :sort_mode => :extended, :order => '@relevance DESC, rank_agg DESC'
 
     end
 

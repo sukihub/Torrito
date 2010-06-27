@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="0d191732-2f6c-4ebc-93ca-f87b17241a3b" name="Default" comment="pre">
+    <list default="true" readonly="true" id="0d191732-2f6c-4ebc-93ca-f87b17241a3b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/sphinx.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/torrito.iml" afterPath="$PROJECT_DIR$/.idea/torrito.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/torrent/index.html.erb" afterPath="$PROJECT_DIR$/app/views/torrent/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/development.sphinx.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/main_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/main_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/torrent.rb" afterPath="$PROJECT_DIR$/app/models/torrent.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/update.rake" afterPath="$PROJECT_DIR$/lib/tasks/update.rake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.rb" afterPath="$PROJECT_DIR$/config/environment.rb" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -28,34 +29,23 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DisabledGemRequirementsHolder">
+    <module name="torrito">
+      <requirement>
+        <dependency name="eventmachine" version="0.12.6" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+    </module>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="torrito" />
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/torrent/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="31" selection-start="629" selection-end="629" vertical-scroll-proportion="-11.409091">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update.rake" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/tasks/update.rake">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="25" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="default.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/default.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="49" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0">
+            <state line="19" column="49" selection-start="774" selection-end="774" vertical-scroll-proportion="-0.6818182">
               <folding />
             </state>
           </provider>
@@ -64,7 +54,25 @@
       <file leaf-file-name="main_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/main_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="21" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
+            <state line="28" column="141" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="36" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5923567">
               <folding />
             </state>
           </provider>
@@ -73,7 +81,7 @@
       <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="17" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+            <state line="1" column="20" selection-start="122" selection-end="122" vertical-scroll-proportion="-0.6818182">
               <folding />
             </state>
           </provider>
@@ -88,28 +96,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="environment.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <file leaf-file-name="torrent_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/torrent_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="72" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <file leaf-file-name="torrent.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/torrent.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="61" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="47" selection-start="707" selection-end="707" vertical-scroll-proportion="0.51369864">
+            <state line="9" column="27" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,7 +117,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="18" selection-start="212" selection-end="494" vertical-scroll-proportion="0.0">
+            <state line="12" column="18" selection-start="212" selection-end="494" vertical-scroll-proportion="-8.181818">
               <folding />
             </state>
           </provider>
@@ -137,26 +136,27 @@
   </component>
   <component name="Git.Settings">
     <option name="GIT_EXECUTABLE" value="C:\Programy\Git\bin\git.exe" />
+    <option name="LINE_SEPARATORS_CONVERSION" value="NONE" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/schedule.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20100602150534_add_details_count.rb" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20100602133754_add_statistics.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20100624134743_add_rank_columns.rb" />
         <option value="$PROJECT_DIR$/app/views/main/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/main/search.html.erb" />
-        <option value="$PROJECT_DIR$/lib/tasks/update.rake" />
-        <option value="$PROJECT_DIR$/app/controllers/main_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/torrent.rb" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app/views/torrent/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/lib/tasks/update.rake" />
+        <option value="$PROJECT_DIR$/config/environment.rb" />
+        <option value="$PROJECT_DIR$/app/models/torrent.rb" />
+        <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/config/sphinx.yml" />
+        <option value="$PROJECT_DIR$/app/views/main/search.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/main_controller.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
       </list>
     </option>
   </component>
@@ -193,6 +193,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -435,9 +438,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -453,16 +453,16 @@
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="RakeTaksPopup.undocumentedIncluded" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="137" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="809" />
+    <property name="RakeTaksPopup.undocumentedIncluded" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="816" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="809" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="129" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="140" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Rails.Development: torrito">
     <configuration default="false" name="db:migrate:down" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -586,6 +586,27 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="CHOOSE_MANUALLY" VALUE="true" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method />
     </configuration>
     <configuration default="true" type="RubyRunConfigurationType" factoryName="Ruby">
@@ -712,15 +733,15 @@
       <method />
     </configuration>
     <list size="9">
-      <item index="0" class="java.lang.String" itemvalue="Rails.Production: torrito" />
-      <item index="1" class="java.lang.String" itemvalue="Rails.Development: torrito" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate:down" />
-      <item index="3" class="java.lang.String" itemvalue="Rake.torrent:calc" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.torrent:count" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.test" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="7" class="java.lang.String" itemvalue="Rake.torrent:update" />
-      <item index="8" class="java.lang.String" itemvalue="Ruby.update" />
+      <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate:down" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.torrent:calc" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.torrent:count" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.torrent:update" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.update" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Production: torrito" />
+      <item index="6" class="java.lang.String" itemvalue="Rails.Development: torrito" />
+      <item index="7" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="8" class="java.lang.String" itemvalue="Rake.spec" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -762,15 +783,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32766616" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16136725" sideWeight="0.19165379" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1891892" sideWeight="0.7434312" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1891892" sideWeight="0.79443586" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24574961" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="19" y="357" width="1258" height="164" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19474497" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="19" y="357" width="1258" height="164" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32766616" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -795,7 +816,7 @@
     <option name="ENABLE_BACKGROUND_PROCESSES" value="true" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="5" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- rails 2.3.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="- rank v torrent view&#10;- editovany update skript" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -830,34 +851,34 @@
     <MESSAGE value="- fix whenever" />
     <MESSAGE value="- dorobene rankovanie torrentov&#10;- drobne fixy" />
     <MESSAGE value="- rails 2.3.5" />
+    <MESSAGE value="- rank v torrent view&#10;- editovany update skript" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Programy/Ruby/lib/ruby/1.9.1/rake.rb">
+    <entry file="file://$PROJECT_DIR$/lib/tasks/update.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1440" column="8" selection-start="41518" selection-end="41518" vertical-scroll-proportion="0.3318078" />
+        <state line="4" column="61" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/graph_controller.rb">
+    <entry file="file://$PROJECT_DIR$/public/robots.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+    <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="86" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0" />
+        <state line="8" column="31" selection-start="315" selection-end="315" vertical-scroll-proportion="0.2739726">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://C:/Programy/Ruby/lib/ruby/gems/1.9.1/gems/rack-1.1.0/lib/rack/handler/thin.rb">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/torrent.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="61" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0" />
+        <state line="122" column="19" selection-start="2050" selection-end="2050" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/torrent_controller.rb">
@@ -865,62 +886,79 @@
         <state line="4" column="0" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/update.rake">
+    <entry file="file://$PROJECT_DIR$/app/models/torrent.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="25" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="49" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/main_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="21" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="212" selection-end="494" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/torrent/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="31" selection-start="629" selection-end="629" vertical-scroll-proportion="-11.409091">
+        <state line="9" column="27" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/config/development.sphinx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="19" selection-start="2050" selection-end="2050" vertical-scroll-proportion="0.0">
+        <state line="13" column="26" selection-start="239" selection-end="239" vertical-scroll-proportion="0.4631829">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.84931505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/sphinx.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="12" selection-start="25" selection-end="25" vertical-scroll-proportion="0.034246575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="212" selection-end="494" vertical-scroll-proportion="-8.181818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="49" selection-start="774" selection-end="774" vertical-scroll-proportion="-0.6818182">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="20" selection-start="122" selection-end="122" vertical-scroll-proportion="-0.6818182">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="72" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="61" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0">
+        <state line="28" column="47" selection-start="1360" selection-end="1360" vertical-scroll-proportion="0.9699769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="707" selection-end="707" vertical-scroll-proportion="0.51369864">
+        <state line="22" column="36" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/main_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="141" selection-start="1057" selection-end="1057" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/deploy.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.5923567">
           <folding />
         </state>
       </provider>
