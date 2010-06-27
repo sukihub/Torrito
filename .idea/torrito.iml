@@ -48,6 +48,18 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="thinking-sphinx" version="1.3.16" bound="EQUAL" lib="thinking_sphinx" git="false" />
+      </requirement>
+      <source from="config/environments/production.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="thinking-sphinx" version="1.3.17" bound="EQUAL" lib="thinking_sphinx" git="false" />
+      </requirement>
+      <source from="config/environments/development.rb" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="thinking-sphinx" version="0" bound="GREATER_OR_EQUAL" git="false" />
       </requirement>
       <source manual="true" />
