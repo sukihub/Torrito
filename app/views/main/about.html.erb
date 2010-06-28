@@ -1,0 +1,36 @@
+<h2>Why?</h2>
+<p>Have you ever wondered, how many people were, a week or a month ago, downloading or uploading the torrent, you are about to
+download? Or how popular was/is torrent created by you? Or even find out information about torrent's content quality, based on its
+stability over time? These were only few reasons, why the idea of Torrito was born.</p>
+
+<h2>How does it work?</h2>
+<p>Torrito is a <a href="http://rubyonrails.org/">Ruby on Rails</a> application, using <a href="http://www.mysql.com/">MySQL</a>
+database.</p>
+<p>Twice a day, it reads data (number of downloaders and uploaders) from all verified <a href="http://torrentz.com/verified">Torrentz</a>
+torrents. Data are then stored in Torrito's local database. Thanks to that, you can at any time see, how many people were uploading
+or downloading your torrent in past.</p>
+<p>Based on data Torrito collects, it also calculates each torrent's stability rank, using
+<a href="http://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a>. This stability rank tells you, whether number of
+people uploading/downloading torrent varied a lot in a past, or was relatively stable. Higher rank means more stable torrent.</p>
+
+<h2>Any plans for the future?</h2>
+<p>Here are few ideas, that may, or may not become reality:</p>
+    <ul>
+        <li>list of new perspective torrents (the highest downloaders/uploaders increase)</li>
+        <li>torrents comparison</li>
+        <li>create public API, so everyone can get creative using data from Torrito</li>
+    </ul>
+
+<h2>Other</h2>
+<p>Torrito was created as part of Web Application Development class, during studies on Faculty of Informatics and Information
+Technologies (<a href="http://www.fiit.stuba.sk">FIIT</a>), Slovak University of Technology (<a href="http://www.stuba.sk">STU</a>).</p>
+<p>Special thanks to supervisors Ján Suchal (he also had the initial idea) and Michal Barla.</p>
+
+<h2>Limitations</h2>
+<p>Since Torrito runs on school's server with limited storage capacity, it's only possible to gather information about
+verified Torrentz torrents (at the time of writing, number is around 62 000, still increasing). Just do the math.</p>
+
+<h2>Contact</h2>
+<p>Have you found any bugs? Do you have idea, how to make Torrito better? Or do you have any other questions/informations/whatever?
+Go ahead and send an email to <span style="color: navy">suki [you_know_what_goes_here] ynet.sk</span>.</p>
+

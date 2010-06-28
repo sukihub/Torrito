@@ -7,7 +7,7 @@ class MainController < ApplicationController
 
       @focus = true
 
-      time = 1.weeks.ago.to_formatted_s(:db)
+      time = 1.week.ago.to_formatted_s(:db)
       details_count = 7;
 
       @results = Torrent.find(:all, :conditions => ['created_at < ? AND details_count >= ?', time, details_count], :order => 'rank_agg DESC', :limit => 20)
@@ -37,6 +37,9 @@ class MainController < ApplicationController
 
         @results = Torrent.find_by_sql(['SELECT title FROM torrents WHERE title LIKE ? ORDER BY id DESC LIMIT ?', @query, limit.to_i])
 
+    end
+
+    def about
     end
 
 end

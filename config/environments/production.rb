@@ -1,6 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+#RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
 ActionController::Base.relative_url_root = '/torrito'
 
@@ -30,9 +30,3 @@ config.action_view.cache_template_loading            = true
 
 # Enable threaded mode
 # config.threadsafe!
-
-config.gem(
-  'thinking-sphinx',
-  :lib     => 'thinking_sphinx',
-  :version => '1.3.16'
-)

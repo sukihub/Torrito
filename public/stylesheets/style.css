@@ -25,13 +25,17 @@ a img {
 	margin-top: 30px;
 }
 .content {
-	margin: 16px 0px 16px 0px;
-	padding: 16px;
+	margin: 0px 0px 16px 0px;
+	padding: 0px 16px 16px 16px;
 }
 .content h2 {
-	margin: 0px 0px 24px 0px;
+	margin: 30px 0px 24px 0px;
 	color: #000e59;
 	font-size: 18pt;
+}
+.content p {
+    margin-bottom: 10px;
+    text-align: justify;
 }
 .searchResults {
     position: relative;
@@ -90,7 +94,7 @@ a img {
 	float:left;
 	/*background-color: #DDDDFF;*/
 	text-align:right;
-	width: 416px;
+	width: 444px;
 }
 .details2 h4 {
 	display:inline;
@@ -106,12 +110,13 @@ a img {
 	font-weight:normal;
 }
 .details3 {
-	padding:16px 24px 16px 0px;
-	width: 112px;
+	padding:16px 8px 16px 0px;
+	width: 100px;
 	font-weight: bold;
 	font-size: 24pt;
 	float:left;
 	text-align:right;
+    margin-bottom:30px;
 }
 .details3 .seed {
 	color: #00FF00;
@@ -121,6 +126,23 @@ a img {
 }
 .details3 .rank {
     color: #AAAAAA;
+}
+.torrentz {
+    float:left;
+    text-align: right;
+    font-family: 'Verdana','Tahoma',sans-serif;
+    font-size: 20pt;
+    margin-left: 450px;
+    padding: 4px 10px 4px 10px;
+    background-color: #225588;
+    -moz-border-radius: 5px;
+}
+.torrentz a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.torrentz a:hover {
+    color: #b3cce6;
 }
 .footer {
 	background-color:#DDDDFF;

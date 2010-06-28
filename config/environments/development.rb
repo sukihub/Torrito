@@ -1,6 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
+#RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # In the development environment your application's code is reloaded on
 # every request.  This slows down response time but is perfect for development
@@ -19,11 +19,5 @@ config.log_level = :info
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
-
-config.gem(
-  'thinking-sphinx',
-  :lib     => 'thinking_sphinx',
-  :version => '1.3.17'
-)
 
 ActiveSupport::Deprecation.silenced = true

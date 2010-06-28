@@ -52,14 +52,4 @@ namespace :deploy do
     CMD
   end
 
-  desc "Stop the sphinx server"
-  task :stop_sphinx , :roles => :app do
-    run "cd #{current_path} && rake thinking_sphinx:stop RAILS_ENV=production"
-  end
-
-  desc "Start the sphinx server"
-  task :start_sphinx, :roles => :app do
-    run "cd #{current_path} && rake thinking_sphinx:configure RAILS_ENV=production && rake thinking_sphinx:start RAILS_ENV=production"
-  end
-
 end
