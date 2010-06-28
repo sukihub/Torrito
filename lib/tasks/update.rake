@@ -2,8 +2,9 @@ namespace :torrent do
 
     task :update => :environment do
         Torrent.rssUpdateTorrents
-        run 'rake thinking_sphinx:reindex RAILS_ENV=production'
-        expire_page :controller => 'main', :action => 'index'
+        Rake::Task['thinking_sphinx:reindex'].invoke
+        #run 'rake thinking_sphinx:reindex RAILS_ENV=production'
+        ApplicationController.expire_page :controller => 'main', :action => 'index'
     end
 
     task :calc => :environment do

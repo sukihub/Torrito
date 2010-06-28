@@ -16,7 +16,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#q').autocomplete('<%= url_for :controller => 'main', :action => 'ac' %>', {max: 8, minChars: 3, selectFirst: false, delay: 200});
+            $('#q').autocomplete('<%= url_for :controller => 'main', :action => 'ac' %>', {max: 8, minChars: 3, selectFirst: false, delay: 100});
             <%= '$(\'#q\').focus();' if @focus %>
         });
     </script>

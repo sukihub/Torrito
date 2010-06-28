@@ -5,6 +5,9 @@ body {
 a img {
     border-width: 0px;
 }
+a {
+    color: #0000aa;
+}
 .container {
 	width: 960px;
 }
@@ -90,7 +93,7 @@ a img {
 	text-align:justify;
 }
 .details2 {
-	padding: 16px 16px 16px 24px;
+	padding: 16px 16px 16px 16px;
 	float:left;
 	/*background-color: #DDDDFF;*/
 	text-align:right;
@@ -110,13 +113,14 @@ a img {
 	font-weight:normal;
 }
 .details3 {
-	padding:16px 8px 16px 0px;
+	padding:16px 16px 16px 0px;
 	width: 100px;
 	font-weight: bold;
 	font-size: 24pt;
 	float:left;
 	text-align:right;
-    margin-bottom:30px;
+    margin-bottom:32px;
+    /*background-color: #DDDDFF;*/
 }
 .details3 .seed {
 	color: #00FF00;
@@ -127,21 +131,23 @@ a img {
 .details3 .rank {
     color: #AAAAAA;
 }
-.torrentz {
+.links {
     float:left;
     text-align: right;
+    padding: 0px 16px 0px 16px;
+    width: 560px;
+}
+.torrentz {
     font-family: 'Verdana','Tahoma',sans-serif;
-    font-size: 20pt;
-    margin-left: 450px;
+    font-size: 18pt;
     padding: 4px 10px 4px 10px;
+    margin-left: 5px;
     background-color: #225588;
     -moz-border-radius: 5px;
-}
-.torrentz a {
     color: #FFFFFF;
     text-decoration: none;
 }
-.torrentz a:hover {
+.torrentz:hover {
     color: #b3cce6;
 }
 .footer {
@@ -163,15 +169,15 @@ a img {
 .pagination a {
     color: #000E59;
 }
-.showgrid {
+/*.showgrid {
 	background-image: url('/images/grid.png');
-}
+}*/
 .graph {
 	width: 928px;
 	height: 300px;
 	margin-bottom: 24px;
 }
-.dateSelector {
+/*.dateSelector {
     text-align: right;
     padding-right: 32px;
 }
@@ -181,4 +187,4 @@ a img {
 }
 .dateSelector img {
     cursor: pointer;
-}
+}*/

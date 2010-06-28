@@ -40,6 +40,9 @@ class MainController < ApplicationController
     end
 
     def about
+
+        @focus = true
+
     end
 
 end
